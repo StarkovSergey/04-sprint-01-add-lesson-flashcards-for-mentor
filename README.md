@@ -12,3 +12,7 @@
 3. Задиспатить action
 4. Получить decks с помощью useAppSelector в компоненте DecksList
 5. Отрендерить компоненты используя компонент DeckItem
+
+Задание 3 (async redux flow) - вынести асинхронную логику из компонента DecksList в thunk
+1. Написать fetchDecksThunk (файл decks-thunks.ts)
+2. Использовать fetchDecksThunk в компоненте DecksList

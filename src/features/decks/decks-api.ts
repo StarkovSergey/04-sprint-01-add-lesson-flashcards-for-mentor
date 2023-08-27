@@ -19,7 +19,16 @@ export const decksAPI = {
   deleteDeck(id: string) {
     return instance.delete<Deck>(`decks/${id}`)
   },
+  updateDeck({ id, name }: UpdateDeckParams) {
+    return instance.patch<Deck>(`decks/${id}`, { name })
+  },
 }
+
+export type UpdateDeckParams = {
+  id: string
+  name: string
+}
+
 export type FetchDecksResponse = {
   items: Deck[]
   pagination: Pagination

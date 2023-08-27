@@ -24,3 +24,6 @@
 
 Задание 5 (delete-запрос)
 Реализовать удаление карточек при нажатии на кноку delete в компоненте DeckItem (delete-запроса, deleteDeckThunk, deleteDeckAC)
+
+Задание 6 (patch-запрос)
+Реализовать update имени карточки при нажатии на кноку update в компоненте DeckItem (path-запрос - будем работать только с name, updateDeckThunk, updateDeckAC). В качестве нового name используем hardcode

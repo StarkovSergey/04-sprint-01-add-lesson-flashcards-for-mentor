@@ -1,6 +1,6 @@
 import s from './DeckItem.module.css'
 import { useAppDispatch } from '../../../../app/store.ts'
-import { deleteDeckThunk } from '../../decks-thunks.ts'
+import { deleteDeckThunk, updateDeckThunk } from '../../decks-thunks.ts'
 
 type DeckProps = {
   deck: any // todo: fix
@@ -13,6 +13,10 @@ export const DeckItem = ({ deck }: DeckProps) => {
   const dispatch = useAppDispatch()
   const handleDeleteButtonClick = () => {
     dispatch(deleteDeckThunk(deck.id))
+  }
+
+  const handeEditButtonClick = () => {
+    dispatch(updateDeckThunk({ id: deck.id, name: `${deck.name} updated` }))
   }
 
   return (
@@ -33,7 +37,7 @@ export const DeckItem = ({ deck }: DeckProps) => {
 
       {isTestingDeck && (
         <div className={s.buttonBox}>
-          <button>update</button>
+          <button onClick={handeEditButtonClick}>update</button>
           <button onClick={handleDeleteButtonClick}>delete</button>
         </div>
       )}

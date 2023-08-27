@@ -16,3 +16,8 @@
 Задание 3 (async redux flow) - вынести асинхронную логику из компонента DecksList в thunk
 1. Написать fetchDecksThunk (файл decks-thunks.ts)
 2. Использовать fetchDecksThunk в компоненте DecksList
+
+Задание 4 (post-запрос)
+1. Написать post-запрос в decksAPI (addDeck)
+2. Написать addDeckThunk и addDeckAC (+case в decksReducer)
+3. Диспатчить addDeckThunk при отправке формы в компоненте AddNewDeckForm (функция onSubmit)

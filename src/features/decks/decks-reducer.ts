@@ -21,12 +21,17 @@ export const decksReducer = (state: DecksState = initialState, action: DecksActi
         ...state,
         decks: [action.deck, ...state.decks],
       }
+    case 'DECKS/DELETE-DECK':
+      return {
+        ...state,
+        decks: state.decks.filter((deck) => deck.id !== action.id),
+      }
     default:
       return state
   }
 }
 
-type DecksActions = ReturnType<typeof setDecksAC> | ReturnType<typeof addDeckAC>
+type DecksActions = ReturnType<typeof setDecksAC> | ReturnType<typeof addDeckAC> | ReturnType<typeof deleteDeckAC>
 
 export const setDecksAC = (decks: Deck[]) => ({
   type: 'DECKS/SET-DECKS' as const,
@@ -35,4 +40,9 @@ export const setDecksAC = (decks: Deck[]) => ({
 export const addDeckAC = (deck: Deck) => ({
   type: 'DECKS/ADD-DECK' as const,
   deck,
+})
+
+export const deleteDeckAC = (id: string) => ({
+  type: 'DECKS/DELETE-DECK' as const,
+  id,
 })

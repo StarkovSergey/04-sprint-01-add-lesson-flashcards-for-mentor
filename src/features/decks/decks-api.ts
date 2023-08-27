@@ -16,6 +16,9 @@ export const decksAPI = {
       name,
     })
   },
+  deleteDeck(id: string) {
+    return instance.delete<Deck>(`decks/${id}`)
+  },
 }
 export type FetchDecksResponse = {
   items: Deck[]

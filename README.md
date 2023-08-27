@@ -21,3 +21,6 @@
 1. Написать post-запрос в decksAPI (addDeck)
 2. Написать addDeckThunk и addDeckAC (+case в decksReducer)
 3. Диспатчить addDeckThunk при отправке формы в компоненте AddNewDeckForm (функция onSubmit)
+
+Задание 5 (delete-запрос)
+Реализовать удаление карточек при нажатии на кноку delete в компоненте DeckItem (delete-запроса, deleteDeckThunk, deleteDeckAC)

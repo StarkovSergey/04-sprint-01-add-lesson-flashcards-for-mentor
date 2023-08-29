@@ -22,8 +22,9 @@ export const AddNewDeckForm = () => {
   })
 
   const onSubmit = (data: FormValues) => {
-    dispatch(addDeckThunk(data.name))
-    reset()
+    dispatch(addDeckThunk(data.name)).then(() => {
+      reset()
+    })
   }
 
   return (
